@@ -45,6 +45,8 @@ class UserTest < Test::Unit::TestCase
   should_only_allow_numeric_values_for :ssn
 
   should_have_readonly_attributes :name
+  
+  should_ensure_length_in_range :middle_initial, (0..1), :long_message => "can only be one letter"
 
   should_fail do
     should_protect_attributes :name, :age

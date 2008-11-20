@@ -25,4 +25,5 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :scope => :name
   validates_length_of :ssn, :is => 9, :message => "Social Security Number is not the right length"
   validates_numericality_of :ssn
+  validates_length_of :middle_initial, :is => 1, :allow_blank => true, :message => "can only be one letter"  
 end
